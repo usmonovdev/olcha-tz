@@ -1,20 +1,20 @@
 <template>
-  <section class="custom-border flex flex-col justify-between gap-4">
-    <h1 class="text-[18px] p-4 bg-green/20 rounded-lg">
+  <section class=" flex flex-col justify-between gap-4">
+    <h1 class="text-[18px] p-4 bg-green rounded-lg">
       Yangi topshiriq qo'shish
     </h1>
     <div class="flex flex-col gap-4 items-center">
       <input
         type="text"
         placeholder="Topshiriq nomi"
-        class="w-full p-4 outline-none rounded-lg bg-neutral-800 focus:bg-green/20 transition-color duration-300"
+        class="w-full p-4 outline-none rounded-lg bg-neutral-900/30 focus:bg-neutral-900/50 transition-color duration-300"
         :value="title"
         @input="title = $event.target.value"
       />
       <textarea
         type="tel"
         placeholder="Topshiriq haqida"
-        class="w-full p-4 outline-none rounded-lg bg-neutral-800 focus:bg-green/20 transition-color duration-300 max-h-[200px] min-h-[100px]"
+        class="w-full p-4 outline-none rounded-lg bg-neutral-900/30 focus:bg-neutral-900/50 transition-color duration-300 max-h-[200px] min-h-[100px]"
         :value="desc"
         @input="desc = $event.target.value"
       >{{ desc }}</textarea>

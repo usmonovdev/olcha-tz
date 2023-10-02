@@ -1,8 +1,8 @@
 <template>
-  <section class="custom-border flex flex-col justify-between gap-4">
+  <section class="flex flex-col justify-between gap-4">
     <div
       v-if="projects.length > 0"
-      :class="[project.completed ? 'bg-green/10' : 'bg-neutral-800']"
+      :class="[project.completed ? 'bg-green/50' : 'bg-neutral-900/30']"
       class="p-4 rounded-lg flex flex-col gap-3"
       v-for="project in projects"
       :key="project.id"
@@ -88,11 +88,11 @@
           type="text"
           :value="title"
           @input="title = $event.target.value"
-          class="w-full p-4 outline-none rounded-lg bg-neutral-900/30 focus:bg-green/20 transition-color duration-300"
+          class="w-full p-4 outline-none rounded-lg bg-neutral-900/30 transition-color duration-300"
         />
         <textarea
           @input="desc = $event.target.value"
-          class="w-full p-4 outline-none rounded-lg bg-neutral-900/30 focus:bg-green/20 transition-color duration-300 max-h-[200px] min-h-[100px]"
+          class="w-full p-4 outline-none rounded-lg bg-neutral-900/30 transition-color duration-300 max-h-[200px] min-h-[100px]"
           >{{ desc }}</textarea
         >
         <div class="flex flex-row gap-3 w-full justify-end">
@@ -111,7 +111,10 @@
         </div>
       </div>
     </div>
-    <div v-else class="h-[100px] flex items-center justify-center">
+    <div
+      v-else
+      class="h-[100px] flex items-center justify-center bg-neutral-900/30 rounded-lg"
+    >
       <p class="text-center px-2 rounded-lg bg-red-600/20">
         Topshiriqlar topilmadi!
       </p>
@@ -138,7 +141,7 @@ export default {
   },
   methods: {
     onCompleted(id) {
-      this.$emit("completed", id)
+      this.$emit("completed", id);
     },
     onDelete(id) {
       this.$emit("delete", id);

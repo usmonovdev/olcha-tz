@@ -1,9 +1,9 @@
 <template>
-  <section class="custom-border flex flex-col gap-4">
+  <section class=" flex flex-col gap-4">
     <input
       type="text"
       placeholder="Qidirish..."
-      class="w-full p-4 outline-none rounded-lg bg-neutral-800 focus:bg-green/20 transition-color duration-300"
+      class="w-full p-4 outline-none rounded-lg bg-neutral-900/30 focus:bg-neutral-900/50 transition-color duration-300"
       :value="search"
       @input="handleSearch($event.target.value)"
     />
@@ -18,7 +18,7 @@
         :class="[
           type == button.value
             ? 'bg-green hover:bg-[#166534]'
-            : 'bg-neutral-800 hover:bg-neutral-900/30',
+            : 'bg-neutral-900/30 hover:bg-neutral-900/30',
         ]"
       >
         {{ button.title }}

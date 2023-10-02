@@ -61,8 +61,16 @@
   .container-custom {
     @apply max-w-[1000px] mx-auto px-4;
   }
+}
 
-  .custom-border {
-    @apply p-4 rounded-lg transition-all duration-200 outline-green bg-neutral-900/30;
-  }
+::-webkit-scrollbar {
+  @apply w-[8px]
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-700 
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-500 rounded-full hover:bg-neutral-600
 }
