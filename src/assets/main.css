@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DMSans-Black";
+  src: url("../fonts/DMSans-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DMSans-ExtraBold";
+  src: url("../fonts/DMSans-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DMSans-Bold";
+  src: url("../fonts/DMSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DMSans-SemiBold";
+  src: url("../fonts/DMSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DMSans-Medium";
+  src: url("../fonts/DMSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DMSans-Regular";
+  src: url("../fonts/DMSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DMSans-Light";
+  src: url("../fonts/DMSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    @apply m-0 p-0 bg-neutral-800 w-full h-screen text-white font-regular;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1000px] mx-auto px-4;
+  }
+
+  .custom-border {
+    @apply p-4 rounded-lg transition-all duration-200 outline-green bg-neutral-900/30;
+  }
+}
