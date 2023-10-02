@@ -137,12 +137,6 @@ export default {
     };
   },
   methods: {
-    // onLike(id) {
-    //   this.$emit("like", id);
-    // },
-    // onViewed(id) {
-    //   this.$emit("viewed", id);
-    // },
     onCompleted(id) {
       this.$emit("completed", id)
     },

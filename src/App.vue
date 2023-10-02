@@ -1,14 +1,21 @@
 <template>
   <section class="container-custom py-8 flex flex-col gap-8">
-    <Header />
-    <Search />
-    <NewTask />
+    <Header
+      :projects="projects.length"
+      :completed="projects.filter((e) => e.completed).length"
+    />
+    <Search
+      :type="type"
+      :updateFilter="updateFilter"
+      @searchvalue="handleSearch"
+    />
     <Task
-      :projects="projects"
+      :projects="searchProject(search, handleFilterProjects(projects, type))"
       @updatedProject="updateProject"
       @delete="handleDelete"
       @completed="handleCompleted"
     />
+    <NewTask @add="handleAddProject" />
   </section>
 </template>
 <script>
@@ -45,6 +52,8 @@ export default {
           completed: false,
         },
       ],
+      type: "all",
+      search: "",
     };
   },
   methods: {
@@ -67,6 +76,31 @@ export default {
           e.completed = !e.completed;
         }
       });
+    },
+    handleAddProject(newProject) {
+      if (newProject.title == 0 || newProject.desc == 0) {
+        return;
+      } else {
+        this.projects.push(newProject);
+      }
+    },
+    handleFilterProjects(arr, type) {
+      if (type == "completed") {
+        return arr.filter((e) => e.completed);
+      }
+      return arr;
+    },
+    updateFilter(type) {
+      this.type = type;
+    },
+    handleSearch(search) {
+      this.search = search;
+    },
+    searchProject(search, arr) {
+      if (search.length == 0) {
+        return arr;
+      }
+      return arr.filter((e) => e.title.toLowerCase().indexOf(search) > -1);
     },
   },
 };
